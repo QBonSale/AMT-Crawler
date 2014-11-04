@@ -1,6 +1,10 @@
 # crawled data
 *.json
 
+# personal data
+scrapy/mturk/mturk/spiders/MySpider.py
+scrapy/mturk/mturk/spiders/MturkSpider.py
+scrapy/mturk/mturk/spiders/failures
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
