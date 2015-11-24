@@ -15,14 +15,14 @@ with open("merged.json",'w') as fout:
 		if ".json" in f:
 			with open(f) as fin:
 				print 'Processing %s' %f
-			  for line in fin:
-		      m = re.search(r'"groupid": \["(.*?)"',line)
-		      if m:
-		     		groupid = m.group(1)
-		      if groupid in records:
-		      	continue
-		      else:
-		      	records.append(groupid)
-		      	line = re.sub(r'(^\[)|(\]$)','',line)
-		      	fout.write(line)
+				for line in fin:
+		      		m = re.search(r'"groupid": \["(.*?)"',line)
+		      		if m:
+		     			groupid = m.group(1)
+					if groupid in records:
+						continue
+					else:
+						records.append(groupid)
+						line = re.sub(r'(^\[)|(\]$)','',line)
+						fout.write(line)
 # need to manually add a pair of "[]" to the beginning and end of the merged file
